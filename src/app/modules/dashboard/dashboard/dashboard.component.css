@@ -1,0 +1,87 @@
+.dashboard-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.app-bar {
+  padding: 8px 0;
+}
+
+.toolbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box mat-icon {
+  color: white;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.toolbar-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.new-alarm-btn {
+  background-color: white !important;
+  color: #1976d2 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  padding: 8px 24px !important;
+  font-weight: 500 !important;
+}
+
+.new-alarm-btn mat-icon {
+  margin-right: 8px;
+}
+
+.new-alarm-btn:hover {
+  background-color: #bbdefb !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn {
+  background-color: white !important;
+  color: #1976d2 !important;
+}
+
+.logout-btn:hover {
+  background-color: #bbdefb !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}

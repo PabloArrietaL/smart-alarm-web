@@ -1,0 +1,57 @@
+<div class="delete-modal">
+  <!-- Warning Icon -->
+  <div class="warning-icon-wrapper">
+    <mat-icon class="warning-icon">warning_amber</mat-icon>
+  </div>
+
+  <h2 mat-dialog-title class="modal-title">¿Eliminar alarma?</h2>
+
+  <mat-dialog-content>
+    <!-- Alarm Detail Card -->
+    <div class="alarm-detail-card">
+      <div class="alarm-header">
+        <div class="alarm-icon-box">
+          <mat-icon>access_alarm</mat-icon>
+        </div>
+        <div class="alarm-info">
+          <h3>{{ data.label }}</h3>
+          <div class="alarm-meta">
+            <span class="alarm-time">{{ data.time }}</span>
+            <span class="meta-dot"></span>
+            <span class="alarm-repeat">{{ data.repeat }}</span>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="alarm-properties">
+        <div class="property">
+          <span class="property-label">Prioridad</span>
+          <div class="property-value">
+            <mat-icon class="priority-dot" style="color: #fb8c00;">circle</mat-icon>
+            <span>{{ data.priority }}</span>
+          </div>
+        </div>
+        <div class="property">
+          <span class="property-label">Notificación</span>
+          <div class="property-value">
+            <mat-icon class="notification-icon">notifications</mat-icon>
+            <span>10 min antes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning Note -->
+    <div class="warning-alert">
+      <mat-icon class="alert-icon">warning_amber</mat-icon>
+      <span>Esta acción no se puede deshacer</span>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="modal-actions">
+    <button mat-stroked-button class="cancel-btn" (click)="onCancel()">Cancelar</button>
+    <button mat-flat-button color="warn" class="delete-btn" (click)="onConfirm()">Sí, eliminar</button>
+  </mat-dialog-actions>
+</div>

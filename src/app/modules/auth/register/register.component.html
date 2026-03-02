@@ -1,0 +1,76 @@
+<div class="register-container">
+  <!-- Brand Section -->
+  <div class="brand-section">
+    <div class="brand-content">
+      <div class="brand-icon">
+        <mat-icon>access_alarm</mat-icon>
+      </div>
+      <h1 class="brand-title">Alarmas</h1>
+      <p class="brand-subtitle">Comienza a organizar tu tiempo hoy</p>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h2>Crear cuenta</h2>
+        <p>Es rápido y fácil</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="field-group">
+          <label class="field-label">Nombre</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="text" placeholder="Juan" [(ngModel)]="firstName" name="firstName" required>
+          </mat-form-field>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Apellido</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="text" placeholder="Pérez" [(ngModel)]="lastName" name="lastName" required>
+          </mat-form-field>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Email</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="email" placeholder="tu@email.com" [(ngModel)]="email" name="email" required>
+          </mat-form-field>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Contraseña</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="password" placeholder="Mínimo 8 caracteres" [(ngModel)]="password" name="password" required>
+          </mat-form-field>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Confirmar contraseña</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="password" placeholder="Repite tu contraseña" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+          </mat-form-field>
+        </div>
+
+        <div class="terms-group">
+          <mat-checkbox [(ngModel)]="acceptTerms" name="acceptTerms" color="primary">
+            <span class="terms-text">
+              Acepto los <a href="javascript:void(0)">Términos y Condiciones</a> y la <a href="javascript:void(0)">Política de Privacidad</a>
+            </span>
+          </mat-checkbox>
+        </div>
+
+        <button mat-flat-button type="submit" class="submit-btn">
+          Crear cuenta
+        </button>
+      </form>
+
+      <div class="login-link">
+        ¿Ya tienes una cuenta?
+        <a href="javascript:void(0)" (click)="goToLogin()">Inicia sesión</a>
+      </div>
+    </div>
+  </div>
+</div>

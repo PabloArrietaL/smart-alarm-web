@@ -1,0 +1,151 @@
+.history-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.app-bar {
+  background-color: #1976d2;
+}
+
+.header-history-icon {
+  margin-left: 8px;
+  margin-right: 12px;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+.toolbar-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Filters */
+.filters-card {
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+
+.filters-card mat-card-content {
+  padding: 24px;
+}
+
+.filters-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 24px 0;
+}
+
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.filter-field {
+  width: 100%;
+}
+
+/* Table */
+.table-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-header {
+  padding: 24px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.export-btn {
+  text-transform: none !important;
+  border-radius: 8px !important;
+}
+
+.export-btn mat-icon {
+  margin-right: 8px;
+}
+
+.history-table {
+  width: 100%;
+}
+
+::ng-deep .history-table .mat-mdc-header-row {
+  background-color: #fafafa;
+}
+
+::ng-deep .history-table .mat-mdc-header-cell {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: #616161;
+}
+
+.history-row:hover {
+  background-color: #fafafa;
+}
+
+.date-text {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.time-display {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+.label-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.alarm-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: #616161;
+}
+
+.status-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  border: 1px solid;
+}
+
+.pagination-wrapper {
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .filters-row {
+    grid-template-columns: 1fr;
+  }
+}

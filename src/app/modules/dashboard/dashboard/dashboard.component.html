@@ -1,0 +1,28 @@
+<div class="dashboard-page">
+  <!-- App Bar -->
+  <mat-toolbar class="app-bar" color="primary">
+    <div class="toolbar-content">
+      <div class="toolbar-left">
+        <div class="logo-box">
+          <mat-icon>access_alarm</mat-icon>
+        </div>
+        <span class="toolbar-title">Dashboard de Alarmas</span>
+      </div>
+      <div class="toolbar-right">
+        <button mat-flat-button class="new-alarm-btn" (click)="navigateToCreate()">
+          <mat-icon>add</mat-icon>
+          Nueva alarma
+        </button>
+        <button mat-icon-button class="logout-btn" matTooltip="Cerrar sesión" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <!-- Content -->
+  <div class="content-container">
+    <app-stats-cards></app-stats-cards>
+    <app-alarm-table></app-alarm-table>
+  </div>
+</div>

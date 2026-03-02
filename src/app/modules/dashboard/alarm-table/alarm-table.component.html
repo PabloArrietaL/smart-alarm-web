@@ -1,0 +1,71 @@
+<mat-card class="table-card">
+  <div class="table-header">
+    <h3>Mis Alarmas</h3>
+    <button mat-stroked-button color="primary" class="history-btn" (click)="goToHistory()">
+      <mat-icon>history</mat-icon>
+      Historial
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="alarms" class="alarm-table">
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>Hora</th>
+      <td mat-cell *matCellDef="let alarm">
+        <span class="time-display">{{ alarm.time }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Repeat Column -->
+    <ng-container matColumnDef="repeat">
+      <th mat-header-cell *matHeaderCellDef>Repetición</th>
+      <td mat-cell *matCellDef="let alarm">
+        <span class="repeat-chip"
+              [style.background-color]="getRepeatBgColor(alarm.repeatType)"
+              [style.color]="getRepeatTextColor(alarm.repeatType)">
+          {{ alarm.repeat }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Label Column -->
+    <ng-container matColumnDef="label">
+      <th mat-header-cell *matHeaderCellDef>Etiqueta</th>
+      <td mat-cell *matCellDef="let alarm">
+        <div class="label-cell">
+          <span class="priority-dot" [style.background-color]="getPriorityColor(alarm.priorityLevel)"></span>
+          <span>{{ alarm.label }}</span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Priority Column -->
+    <ng-container matColumnDef="priority">
+      <th mat-header-cell *matHeaderCellDef>Prioridad</th>
+      <td mat-cell *matCellDef="let alarm">
+        <div class="priority-cell">
+          <mat-icon class="priority-circle" [style.color]="getPriorityColor(alarm.priorityLevel)">circle</mat-icon>
+          <span class="priority-text">{{ alarm.priority }}</span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let alarm">
+        <div class="action-buttons">
+          <button mat-icon-button class="edit-btn" (click)="editAlarm(alarm.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button class="delete-btn" (click)="deleteAlarm(alarm)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="alarm-row"></tr>
+  </table>
+</mat-card>

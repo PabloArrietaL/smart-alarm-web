@@ -1,0 +1,65 @@
+<div class="login-container">
+  <!-- Brand Section -->
+  <div class="brand-section">
+    <div class="brand-content">
+      <div class="brand-icon">
+        <mat-icon>access_alarm</mat-icon>
+      </div>
+      <h1 class="brand-title">Alarmas</h1>
+      <p class="brand-subtitle">Gestiona tu tiempo de forma inteligente</p>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>Sincronización en todos tus dispositivos</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>Gestión avanzada de alarmas</span>
+        </div>
+        <div class="feature-item">
+          <mat-icon>check_circle</mat-icon>
+          <span>Historial completo de actividad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-section">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h2>Iniciar sesión</h2>
+        <p>Bienvenido de vuelta</p>
+      </div>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="field-group">
+          <label class="field-label">Email</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="email" placeholder="tu@email.com" [(ngModel)]="email" name="email">
+          </mat-form-field>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Contraseña</label>
+          <mat-form-field appearance="outline" class="custom-field">
+            <input matInput type="password" placeholder="••••••••" [(ngModel)]="password" name="password">
+          </mat-form-field>
+          <div class="forgot-link">
+            <a href="javascript:void(0)">¿Olvidaste tu contraseña?</a>
+          </div>
+        </div>
+
+        <button mat-flat-button type="submit" class="submit-btn">
+          Iniciar sesión
+        </button>
+      </form>
+
+      <div class="register-link">
+        ¿No tienes una cuenta?
+        <a href="javascript:void(0)" (click)="goToRegister()">Regístrate</a>
+      </div>
+    </div>
+  </div>
+</div>

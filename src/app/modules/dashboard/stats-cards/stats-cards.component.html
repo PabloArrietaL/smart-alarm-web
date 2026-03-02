@@ -1,0 +1,14 @@
+<div class="stats-grid">
+  <mat-card *ngFor="let stat of stats" class="stat-card">
+    <mat-card-content>
+      <span class="stat-label">{{ stat.label }}</span>
+      <div class="stat-row">
+        <span class="stat-value">{{ stat.value }}</span>
+        <div class="stat-icon-box" [style.background-color]="stat.color"
+             [style.box-shadow]="'0 4px 12px ' + stat.color + '40'">
+          <mat-icon>{{ stat.icon }}</mat-icon>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

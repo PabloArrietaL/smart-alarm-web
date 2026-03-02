@@ -1,0 +1,98 @@
+<div class="edit-page">
+  <!-- App Bar -->
+  <mat-toolbar class="app-bar" color="primary">
+    <button mat-icon-button (click)="cancel()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="toolbar-title">Editar Alarma</span>
+  </mat-toolbar>
+
+  <!-- Content -->
+  <div class="content-container">
+    <!-- Header -->
+    <div class="page-header">
+      <div class="header-icon edit-icon">
+        <mat-icon>edit</mat-icon>
+      </div>
+      <h2>Editar Alarma</h2>
+      <p>Modifica la configuración de tu alarma</p>
+    </div>
+
+    <!-- Form Card -->
+    <mat-card class="form-card">
+      <mat-card-content>
+        <!-- Time Picker -->
+        <div class="form-section">
+          <span class="section-label">Hora</span>
+          <div class="time-picker-box">
+            <input class="time-input" [(ngModel)]="hour" maxlength="2" placeholder="12">
+            <span class="time-separator">:</span>
+            <input class="time-input" [(ngModel)]="minute" maxlength="2" placeholder="30">
+          </div>
+        </div>
+
+        <!-- Selectors Row -->
+        <div class="selectors-row">
+          <mat-form-field appearance="outline" class="half-field">
+            <mat-label>Repetición</mat-label>
+            <mat-select [(ngModel)]="repetition">
+              <mat-option value="once">Una vez</mat-option>
+              <mat-option value="daily">Diariamente</mat-option>
+              <mat-option value="weekdays">Lunes a Viernes</mat-option>
+              <mat-option value="weekend">Fines de semana</mat-option>
+              <mat-option value="custom">Personalizado</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="half-field">
+            <mat-label>Notificación Previa</mat-label>
+            <mat-select [(ngModel)]="notification">
+              <mat-option value="none">Sin notificación</mat-option>
+              <mat-option value="5min">5 minutos antes</mat-option>
+              <mat-option value="10min">10 minutos antes</mat-option>
+              <mat-option value="15min">15 minutos antes</mat-option>
+              <mat-option value="30min">30 minutos antes</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="selectors-row hints-row">
+          <span class="hint-text">Define cuándo se repetirá la alarma</span>
+          <span class="hint-text">Recibe un aviso anticipado</span>
+        </div>
+
+        <!-- Label -->
+        <div class="form-section">
+          <mat-form-field appearance="outline" class="full-field">
+            <mat-label>Etiqueta</mat-label>
+            <input matInput [(ngModel)]="label" placeholder="Ej: Rutina matutina, Reunión importante, Ejercicio...">
+          </mat-form-field>
+          <span class="hint-text">Dale un nombre descriptivo a tu alarma</span>
+        </div>
+
+        <!-- Priority -->
+        <div class="form-section">
+          <span class="section-label">Prioridad</span>
+          <mat-button-toggle-group [(ngModel)]="selectedPriority" class="priority-group">
+            <mat-button-toggle *ngFor="let p of ['low', 'medium', 'high']"
+                               [value]="p"
+                               [class.selected]="selectedPriority === p"
+                               class="priority-toggle">
+              <div class="priority-content">
+                <mat-icon [style.color]="getPriorityColor(p)">
+                  {{ p === 'high' ? 'circle' : p === 'medium' ? 'radio_button_checked' : 'radio_button_unchecked' }}
+                </mat-icon>
+                <span>{{ getPriorityLabel(p) }}</span>
+              </div>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+          <span class="hint-text hint-mt">Indica la importancia de esta alarma</span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+          <button mat-stroked-button class="cancel-btn" (click)="cancel()">Cancelar</button>
+          <button mat-flat-button color="primary" class="save-btn" (click)="save()">Guardar Cambios</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
