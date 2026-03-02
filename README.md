@@ -141,16 +141,3 @@ interface HistoryEntry {
   color: string;
 }
 ```
-
-## Documentación de Diseño
-
-El proyecto fue desarrollado a partir de la siguiente documentación UX:
-
-- **User Flows**: Flujos de usuario para mobile y web
-- **Red Route Analysis**: Priorización de funcionalidades por frecuencia de uso
-- **MVP Planning**: Roadmap de funcionalidades por fase (MVP, corto, mediano y largo plazo)
-- **Pantallas**: Inventario de pantallas y navegación entre vistas
-
-## Autor
-
-Pablo Arrieta
